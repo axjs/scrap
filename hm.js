@@ -5,7 +5,14 @@ pjs.addSuite({
   // single function or array, evaluated in the client
   scraper: function() {
     return $("article.product-item").map(function(indx, el){
-      return {name: $(el).find('a').text(), oldPrice: $(el).find('small').text(), price: $(el).find('.product-item-price').text().trim(), image: $(el).find('img').attr('data-image')};
+      var res = {
+        name: $(el).find('a').text(), 
+        oldPrice: $(el).find('small').text(), 
+        price: $(el).find('.product-item-price').text().trim(), 
+        image: $(el).find('img').attr('data-image')
+      };
+      
+      return res;
     });
   }
 });
