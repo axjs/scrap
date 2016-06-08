@@ -15,6 +15,8 @@ pjs.addSuite({
         image: $el.find('img').attr('data-image')
       };
       
+      $('body').append($('<div></div>',{class: 'holder'}).html('<h3>Leaf</h3>'))
+      
       console.info(res)
       return res
     }).toArray()
