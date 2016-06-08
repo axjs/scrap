@@ -7,16 +7,17 @@ pjs.addSuite({
   // single function or array, evaluated in the client
   scraper: function() {
     return $("article.product-item").map(function(indx, el){
+      var $el = $(el)
       var res = {
-        name: $(el).find('a').text(), 
-        oldPrice: $(el).find('small').text(), 
-        price: $(el).find('.product-item-price').text().trim(), 
-        image: $(el).find('img').attr('data-image')
+        name: $el.find('a').text(), 
+        oldPrice: $el.find('small').text(), 
+        price: $el.find('.product-item-price').text().trim(), 
+        image: $el.find('img').attr('data-image')
       };
       
       console.info(res)
-      return res;
-    });
+      return res
+    }).toArray()
   }
 });
 
